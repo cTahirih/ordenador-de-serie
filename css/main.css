@@ -1,2 +1,13 @@
-/* font-family: 'Ubuntu', sans-serif;
-font-family: 'Montserrat', sans-serif; */
+
+body {
+  background-color: #DFDBE5;
+  background-image: url(../assets/hideout.svg);
+}
+
+.font__ubuntu {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.main__box-image {
+  width: 200px;
+}
