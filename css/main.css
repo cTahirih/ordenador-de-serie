@@ -54,7 +54,7 @@ body {
 
 .main__box--result {
   color: #4598af;
-  font-size: 17px;
+  font-size: 30px;
   margin: 10px 0;
   font-weight: bold;
 }
@@ -66,7 +66,4 @@ body {
     font-size: 25px;
   }
 
-  .main__box--result {
-    font-size: 25px;
-  }
 }
