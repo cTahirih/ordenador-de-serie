@@ -10,22 +10,30 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
 </head>
 <body>
-  <header class="row">
-    <div class="column small-12 text-center">
-      <h1 class="font__ubuntu">Ordenando series</h1>
-    </div>
-  </header>
-  <main>
-    <div class="main__box-image">
-      <img src="assets/img_school.png" alt="Buho">
-    </div>
-    <div class="main__box--text">
-      <p>Hola. Soy Orlando, y te ayudaré a ordenar números.</p>
-      <p>A continuación ingrese la cantidad de números que desea ordenar:</p>
-    </div>
-    <form id="js_main__form">
-      <input type="tel" id="js_main__form--input", value="">
-      <button id="js_main__form--button">Guardar</button>
+  <main class="layout">
+    <section class="row">
+      <div class="column small-12 medium-8">
+        <div class="main__box--text font__ubuntu" id="js-first_box">
+          <p>Hola. Soy Orlando, y te ayudaré a ordenar números.</p>
+          <p>A continuación ingrese la cantidad total de números que desea ordenar:</p>
+        </div>
+        <div class="main__box--text text-center font__ubuntu" id="js-second_box" style="display: none;">
+          <p>Ahora ingresa uno a uno la serie de números:</p>
+        </div>
+      </div>
+      <div class="column small-12 medium-4 text-center">
+        <div class="main__box-image">
+          <img src="assets/img_school.png" alt="Buho">
+        </div>
+      </div>
+    </section>
+    <form id="js_main__formOne" class="column text-center">
+      <input type="tel" id="js_main__form--input", value="" class="main__form-input validanumericos">
+      <button id="js_main__form--button" class="main__form-btn">Ok</button>
+    </form>
+    <form id="js_main__formTwo" class="column text-center" style="display: none;">
+      <input type="tel" id="js_main__form--inputTwo", value="" class="main__form-input validanumericos">
+      <button id="js_main__form--buttonTwo" class="main__form-btn">Ok</button>
     </form>
   </main>
   <script src="js/app.js"></script> 
