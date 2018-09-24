@@ -2,6 +2,11 @@
 body {
   background-color: #DFDBE5;
   background-image: url(../assets/hideout.svg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
 }
 
 .font__ubuntu {
@@ -10,4 +15,49 @@ body {
 
 .main__box-image {
   width: 200px;
+  display: inline-block;
+}
+
+.main__box--text {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+  color: orange;
+  font-size: 17px;
+}
+
+.main__form-input {
+  height: 30px;
+  background: transparent;
+  color: purple;
+  border: 1px solid purple;
+  outline: 0;
+  width: 300px;
+  border-radius: 10px;
+  padding: 10px 5px;
+  display: block;
+  margin: 10px auto;
+  font-size: 45px;
+  height: 60px;
+}
+
+.main__form-btn {
+  background: purple;
+  color: white;
+  font-weight: bold;
+  outline: 0;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+@media  screen and (min-width: 40em) {
+  .main__box--text {
+    width: 70%;
+    margin-left: 30%;
+    font-size: 25px;
+  }
+
+
 }
