@@ -19,26 +19,13 @@ let sortNumbers = (array) => {
   return array;
 }
 
-
-let sorting = sortNumbers([ 8 ,3, 2, 2, 345]);
-
-let result = sorting.reduce((nwArray, current) => {
-
-  let len = nwArray.length;
-  if(len == 0 || nwArray[len - 1] != current) nwArray.push(current)
- 
-  return nwArray;
-},[])
-
-console.log(result);
-
-
-const formGetTotal = document.getElementById('js_main__formOne');
+// const formGetTotal = document.getElementById('js_main__formOne');
 const formGetNumbers = document.getElementById('js_main__formTwo');
-const formInputGetNumbersLenght = document.getElementById('js_main__form--input');
+// const formInputGetNumbersLenght = document.getElementById('js_main__form--input');
 const formInputGetNumbers = document.getElementById('js_main__form--inputTwo');
-const firstBoxText = document.getElementById('js-first_box');
-const secondBoxText = document.getElementById('js-second_box');
+// const firstBoxText = document.getElementById('js-first_box');
+// const secondBoxText = document.getElementById('js-second_box');
+const resultSort = document.getElementById('js-resultSort');
 
 let longArray;
 let arrayOfNumbersEnterByUSer = [];
@@ -54,32 +41,26 @@ onload = function(){
   }
 }
 
-
-formGetTotal.addEventListener('submit', (evt) => {
+formGetNumbers.addEventListener('submit', (evt) => {
   evt.preventDefault();
-  longArray = formInputGetNumbersLenght.value;
+  
+  arrayOfNumbersEnterByUSer.push(parseInt(formInputGetNumbers.value));
+  formInputGetNumbers.value = '';
 
-  formInputGetNumbersLenght.value = '';
-  firstBoxText.style.display = 'none';
-  formGetTotal.style.display = 'none';
-  secondBoxText.style.display = 'block';
-  formGetNumbers.style.display = 'block';
-  console.log(longArray);
+  sorting = sortNumbers(arrayOfNumbersEnterByUSer);
 
-  formGetNumbers.addEventListener('submit', (evt) => {
-    evt.preventDefault();
-    console.log(longArray);
-    let i = 0;
-    if(i <= longArray) {
-      arrayOfNumbersEnterByUSer.push(formInputGetNumbers.value);
-      formInputGetNumbers.value = '';
-    } else {
-      formInputGetNumbers.style.display = 'none';
-    }
-    console.log(arrayOfNumbersEnterByUSer);
-  })
+  let result = sorting.reduce((nwArray, current) => {
 
-});
+    let len = nwArray.length;
+    if(len == 0 || nwArray[len - 1] != current) nwArray.push(current)
+    
+    return nwArray;
+  },[])
+
+  let resultSortTemplate = `<span>${ result }</span>`;
+  resultSort.innerHTML = resultSortTemplate;
+})
+
 
 
 
